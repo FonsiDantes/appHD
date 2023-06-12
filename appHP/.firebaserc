@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "app20-6931e": {
+      "hosting": {
+        "app": [
+          "app20-6931e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "app20-6931e"
+  }
+}

@@ -1,0 +1,28 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ng-container *ngIf="user$ | async as user">
+            <ion-list-header>Bienvenido</ion-list-header>
+            <ion-note>{{ user.email}}</ion-note>                 
+          </ng-container>
+
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+
+          </ion-menu-toggle>
+          
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="logout()" lines="none">
+              <ion-icon slot="start" name="log-out" color="primary"></ion-icon>
+              <ion-label>Cerrar sesión</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

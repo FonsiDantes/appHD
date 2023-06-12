@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <strong>Ticket</strong>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <ion-button expand="block" (click)="openEmail()">
+      Generar ticket
+      <ion-icon slot="start" name="create"></ion-icon>
+    </ion-button>
+  
+    <ion-button expand="block" (click)="captureImage()">
+      Captura una foto
+      <ion-icon slot="start" name="camera"></ion-icon>
+    </ion-button>
+
+  <ion-card>
+
+    <ion-card-header>
+      "La foto aparecerá aquí y se adjuntará en el ticket."
+    </ion-card-header>
+
+    <ion-card-content>
+      <img [src]="currentImage" *ngIf="currentImage" />
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+
+
