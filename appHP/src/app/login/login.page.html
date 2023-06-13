@@ -1,8 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title>Login</ion-title>
+    <ion-title class="ion-text-center">
+      <strong>Iniciar sesión</strong>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
+
+
 
 <ion-content class="ion-padding">
   <form [formGroup]="form" novalidate (ngSubmit)="login()">
@@ -19,10 +23,16 @@
     </ion-list>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" expand="block">Ingresar</ion-button>
+        <ion-button type="submit" expand="block">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Ingresar
+        </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button routerLink="/register" type="button" expand="block">Registrate</ion-button>
+        <ion-button routerLink="/register" type="button" expand="block">
+          <ion-icon slot="start" name="person-add-outline"></ion-icon>
+          Crear cuenta
+        </ion-button>
       </ion-col>
     </ion-row>
   </form>

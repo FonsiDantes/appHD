@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Register</ion-title>
+    <ion-title>
+      <strong>Crear cuenta</strong>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,28 +13,32 @@
   <form [formGroup]="form" novalidate (ngSubmit)="register()">
     <ion-list>
       <ion-item>
-        <ion-label position="stacked">Email</ion-label>
+        <ion-label position="stacked">Correo</ion-label>
         <ion-input formControlName="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Password</ion-label>
+        <ion-label position="stacked">Contraseña</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Confirm Password</ion-label>
+        <ion-label position="stacked">Confirma tu contraseña</ion-label>
         <ion-input type="password" formControlName="confirmPassword"></ion-input>
       </ion-item>
     </ion-list>
 
     <ion-row>
       <ion-col>
-        <ion-button routerLink="/login" routerDirection="back" type="button" expand="block">Login</ion-button>
+        <ion-button routerLink="/login" routerDirection="back" type="button" expand="block">
+          <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+          Regresar
+        </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button type="submit" expand="block">Register</ion-button>
+        <ion-button type="submit" expand="block">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Ingresar
+        </ion-button>
       </ion-col>
     </ion-row>
   </form>
 </ion-content>
-
- 
