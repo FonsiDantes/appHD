@@ -12,7 +12,7 @@
 <ion-content scrollEvents="true">
 
   <div *ngIf="!messages.length" class="empty">
-    <ion-icon src="assets/bot.svg"  color="primary"></ion-icon>
+    <ion-icon src="assets/bot.svg"></ion-icon>
     <h4>Soy tu chat de atención</h4>
   </div>
 
@@ -30,16 +30,15 @@
 
 <ion-footer class="ion-padding">
 
-<form [formGroup]="form" (ngSubmit)="submit()" (keyup.enter)="submit()">
+<form [formGroup]="form">
 
   <ion-item lines="none" class="text-box-item">
 
     <ion-textarea formControlName="promt" auto-grow="true" placeholder="Escribe tu mensaje">  </ion-textarea>
   
       <ion-buttons slot="end">
-  
-        <ion-button>
-          <ion-icon name="send" class="submit-icon" color="primary"></ion-icon>
+        <ion-button (click)="submit()" [disabled]="form.invalid">
+          <ion-icon name="send"  class="submit-icon" color="primary"></ion-icon>
         </ion-button>
   
       </ion-buttons>
