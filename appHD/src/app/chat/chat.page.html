@@ -13,15 +13,17 @@
 
   <div *ngIf="!messages.length" class="empty">
     <ion-icon src="assets/bot.svg"></ion-icon>
-    <h4>Soy tu chat de atención.</h4>
+    <h4>Hola, soy tu chat de atención.</h4>
   </div>
 
   <ion-item lines="none" [ngClass]="{'bot' : m.sender! == 'me'}" class="chat-item" *ngFor="let m of messages; index as i">
-    <ion-badge color="m.sender == 'me' ? 'success' : 'tertiary'" mode="ios"></ion-badge>
-    <ion-icon class="chat-icon" slot="start" [src]="m.sender == 'me' ? 'assets/user.svg' : 'assets/bot.svg'" color="primary"></ion-icon>
+    <ion-badge slot="start" [color]="m.sender == 'me' ? 'success' : 'primary'" mode="ios">
+    <ion-icon class="chat-icon" [src]="m.sender == 'me' ? 'assets/user.svg' : 'assets/bot.svg'"></ion-icon>
+  </ion-badge>
     <ion-label class="ion-text-wrap">
       <p class="w-space">{{m.content}}</p>
-      <ion-spinner *ngIf = "loading && (i+1 == messages.length)" name="dots"  color="primary"></ion-spinner>
+      <ion-spinner *ngIf = "loading && (i+1 == messages.length)" name="dots"  color="tertiary">
+      </ion-spinner>
     </ion-label>
   </ion-item>
 
