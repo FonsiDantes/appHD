@@ -4,24 +4,32 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>
-      <strong>Crear cuenta</strong>
+      <strong>Help Desk</strong>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+
+  <div class="logo">
+    <ion-avatar style="margin: 0 auto;">
+      <ion-img src="/assets/logo.png"/>
+    </ion-avatar >
+    <h4>Crear cuenta</h4>
+  </div>
+
   <form [formGroup]="form" novalidate (ngSubmit)="register()">
     <ion-list>
       <ion-item>
-        <ion-label position="stacked">Correo</ion-label>
+        <ion-label position="floating">Correo</ion-label>
         <ion-input formControlName="email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="stacked">Confirma tu contraseña</ion-label>
+        <ion-label position="floating">Confirma tu contraseña</ion-label>
         <ion-input type="password" formControlName="confirmPassword"></ion-input>
       </ion-item>
     </ion-list>
@@ -36,7 +44,7 @@
       <ion-col>
         <ion-button type="submit" expand="block">
           <ion-icon slot="start" name="log-in-outline"></ion-icon>
-          Ingresar
+          Registrarme
         </ion-button>
       </ion-col>
     </ion-row>

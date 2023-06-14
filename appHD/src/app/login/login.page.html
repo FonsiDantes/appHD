@@ -1,23 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title class="ion-text-center">
-      <strong>Iniciar sesión</strong>
+      <strong>Help Desk</strong>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content class="ion-padding">
-  <form [formGroup]="form" novalidate (ngSubmit)="login()">
+
+  <div class="logo">
+    <ion-avatar style="margin: 0 auto;">
+      <ion-img src="/assets/logo.png"/>
+    </ion-avatar >
+    <h4>Iniciar sesión</h4>
+  </div>
+
+  <form [formGroup]="form" validate (ngSubmit)="login()">
     <ion-list>
       <ion-item>
-        <ion-label position="stacked">Correo</ion-label>
-        <ion-input formControlName="email"></ion-input>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-label position="floating">Contraseña</ion-label>
         <ion-input type="password" formControlName="password"></ion-input>
       </ion-item>
     </ion-list>
@@ -36,6 +42,7 @@
       </ion-col>
     </ion-row>
   </form>
+  
 </ion-content>
 
  
